@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(void)
+{
+	int a = 10;
+
+	int* p = &a;//*只说明p是一个指针变量
+	*p = 20;//*解引用操作符，对a重新赋值
+	printf("%d\n", a );
+	printf("%d\n", *p);
+	printf("%d\n", sizeof(p));//指针变量64位大小8字节，32位的指针变量大小4字节
+	return 0;
+}
