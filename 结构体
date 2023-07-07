@@ -1,0 +1,17 @@
+
+//结构体 struct
+#include <stdio.h>
+struct Movie
+{
+		char name[20];
+		double price;
+		char position[20];
+	};
+	int main()
+	{
+		struct Movie M1 = { "环太平洋",60.66,"第六排6座位" };
+		printf("电影名：%s\n", M1.name);
+		printf("价格：%lf元\n", M1.price);
+		printf("座位：%s\n", M1.position);
+		return 0;
+}
