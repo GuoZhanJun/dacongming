@@ -1,0 +1,22 @@
+//编写代码实现，模拟用户登陆情景，并且只能登陆三次。（只允许输入三次密码，如果密码正确则提示登陆完成，如果三次均输入错误，则退出程序。
+#include <stdio.h>
+int main()
+{
+	int i = 0;
+	char password[20] = {0};
+	for (i = 0; i < 3; i++)
+	{
+		printf("请输入密码\n");
+		scanf("%s", password);
+		if (strcmp(password, "123456") == 0)
+		{
+			printf("登陆成功\n");
+			break;
+ }
+		}
+		if (i == 3)
+		{
+			printf("三次密码均错误，登陆失败\n");
+		}
+	return 0;
+}
