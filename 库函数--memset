@@ -1,0 +1,10 @@
+//库函数--memset
+#include <stdio.h>
+int main()
+{
+	char arr1[] = "hello world";
+	memset(arr1, '$', 5);
+	     //地址， 改为，改的数量
+	printf("%s\n", arr1);
+	return 0;
+}
