@@ -1,0 +1,13 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//库函数--strcpy
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char arr1[] = "guo zhan jun";
+	char arr2[40] = "#############";
+	strcpy(arr2, arr1);
+	printf("%s\n",arr2);
+	//strcpy(所需要被覆盖的,覆盖源)所以arr2变成了arr1的值
+	return 0;
+}
