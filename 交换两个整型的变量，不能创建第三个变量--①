@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//交换两个整型的变量，不能创建第三个变量
+#include<stdio.h>
+#include<limits.h>
+int main()
+{
+	int a = 3;
+	int b = 5;
+	INT_MAX; //2147483647
+	printf("变换前：a=%d b=%d", a, b);
+	//会出现整型溢出的问题
+	//int - 4个字节  32位bit位-最大值
+	a = a + b;//a=8,b=5
+	b = a - b;//此时b=3
+	a = a - b;//此时a=5
+	printf("\n");
+	printf("变换后：a=%d b=%d", a, b);
+	return 0;
+}
