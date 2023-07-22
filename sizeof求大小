@@ -6,6 +6,17 @@ int main()
 	char c = 'r';
 	char* p = &c;
 	int arr[10] = { 0 };
+	char arr[] = { 0 };
+	double y = 0;
+	float i = 10.5;
+	short s = 0;
+	int a = 10;
+	printf("%d\n", sizeof(s = a + 5));//2
+	printf("%d\n", sizeof(float));//4
+	printf("%d\n", sizeof(double));//8
+	printf("%d\n", sizeof(char));//1
+	printf("%d\n", s);//0
+
 	printf("%d\n", sizeof(a));
 	printf("%d\n", sizeof(int));//4
 
