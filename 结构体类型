@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//创建一个结构体类型 --struct Stu与 int等变量类型相同含义
+struct Stu
+{
+	//成员变量
+	char name[20];
+	int age;
+	char id[20];
+};
+int main()
+{
+	struct Stu s1 = { "张三",20,"202252330308" };
+	struct Stu* ps = &s1;
+	printf("%d\n", (*ps).age);
+	printf("%s\n", (*ps).id);
+	printf("%s\n", (*ps).name);
+
+
+	printf("%s\n", s1.name);
+	printf("%d\n", s1.age);
+	printf("%s\n", s1.id);
+	//结构体变量.成员名
+	return 0;
+}
