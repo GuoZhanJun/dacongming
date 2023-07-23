@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void test1(int arr[])//此时求的是arr指针的大小(8\4)
+{
+	printf("%d\n", sizeof(arr));
+}
+void test3(int arr[])//此时求的是arr首个元素的大小(4)
+{
+	printf("%d\n", sizeof(*arr));
+}
+void test2(char ch[])//此时求的是ch指针的大小(8\4)
+{
+	printf("%d\n", sizeof(ch));
+}
+void test4(char ch[])//此时求的是ch首个元素的大小(1)
+{
+	printf("%d\n", sizeof(*ch));
+}
+int main()
+{
+	int arr[10] = { 0 };
+	char ch[10] = { 0 };
+	printf("%d\n", sizeof(arr));
+	printf("%d\n", sizeof(ch));
+	test1(arr);
+	test2(ch);
+	test3(*arr);
+	test4(*ch);
+	return 0;
+}
