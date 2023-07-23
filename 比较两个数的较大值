@@ -1,5 +1,5 @@
 //比较两个数的较大值
-#include <stdio.h>
+#include <stdio.h>//最初级
 int get_max(int x, int y)
 {
 	if (x > y)
@@ -17,3 +17,47 @@ int main()
 	printf("max= %d\n", max);
 	return 0;
 }
+//方法一
+//比较两个数的大小
+//int max(int x, int y)
+//{
+//	int c = x > y ? x : y;
+//	return c;
+//}
+//int main()
+//{
+//	int a = 0, b = 0;
+//	scanf("%d%d", &a, &b);
+//	printf("%d\n", max(a, b));
+//	return 0;
+//}
+
+
+//方法二
+//比较两个数的大小
+//#include<stdio.h>
+//int main()
+//
+//{
+//
+//	int a, b;
+//	scanf("%d%d", &a, &b);
+//	printf("%d", a > b ? a : b);
+//	return 0;
+//}
+
+//方法三
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 0, b = 0;
+//	scanf("%d%d", &a, &b);
+//	if (a > b)
+//		printf("%d", a);
+//	else if (a < b)
+//		printf("%d", b);
+//	else
+//		printf("相等\n");
+//	return 0;
+//
+//}
