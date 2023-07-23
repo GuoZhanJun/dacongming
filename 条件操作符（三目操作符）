@@ -1,0 +1,24 @@
+//条件操作符（三目操作符）--
+//exp1?exp2:exp3--如果表达式1为真，则表达式2进行计算，结果以2为主
+//--如果表达式1为假，则表达式3进行计算，结果以3为主
+int main()
+{
+	int a = 0;
+	int b = 0;
+	if (a > 5)
+		b = 3;
+	else
+		b = -3;
+	b = (a > 5 ?  3 : -3);
+	printf("%d\n", b);//此时a>5为假，将-3赋值给b
+	int c = 10;
+	int d = 20;
+	int max = 0;
+	if (c > d)
+		max = c;
+	else
+		max = d;
+	max = (c > d ? c : d);
+	printf("%d\n", max);//此时c>d为假，将20赋值给max
+	return 0;
+}
