@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//双目操作符（&&，||）
+int main()
+{
+	int q = 0;
+	int w = 5;
+	int e = q && w;
+	printf("%d\n", e);//q和w都为真结果才为1
+	int r = q || w;
+	printf("%d\n", r);//q或者w其中一个为真结果就是1
+
+
+
+	int i = 0, a = 0, b = 2, c = 3, d = 4;
+	i = a++ && ++b && d++;//因为a++=0之后与后面的b和d进行&&，其结果为假，++b,d++都不执行，b=2,d=4
+
+	printf(" a=%d\n b=%d\n c=%d\n d=%d\n", a, b, c, d);//1234
+	i = a++ || ++b || d++;
+	printf(" a=%d\n b=%d\n c=%d\n d=%d\n", a, b, c, d);//2234
+	return 0;
+	//总结--&&遇到0后面不执行，||遇到1后面不执行
+}
