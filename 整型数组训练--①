@@ -1,0 +1,30 @@
+//创建一个整型数组，完成对数组的操作
+//1.实现函数int()初始化数组为全0.
+//2.实现print（）打印数组的每个元素
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+void Init(int arr[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		arr[i] = 0;
+	}
+}
+void print(int arr[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[9]);
+	}
+}
+int main()
+{
+	int arr[10] = { 0 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	Init(arr,sz);//把数组初始化为全0
+	print(arr, sz);//打印
+	return 0;
+}
