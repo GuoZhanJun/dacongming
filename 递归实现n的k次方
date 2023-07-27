@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
 //递归实现n的k次方
 double Pow(int n, int k)
 {
