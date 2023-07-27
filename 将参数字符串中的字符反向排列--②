@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//字符串逆序（递归实现）
+//要求：不能使用c函数库中的字符串操作函数。
+// 编写一个函数reverse_string（char*string)
+//实现：将参数字符串中的字符反向排列
+#include<stdio.h>
+int my_strlen(char* str)
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+void reverse_string(char arr[])
+{
+	int left = 0;
+	int right =my_strlen(arr) - 1;
+	while (left < right)
+	{
+		int tmp = arr[left];
+		arr[left] = arr[right];
+		arr[right] = tmp;
+		left++;
+		right--;
+
+	}
+}
+int main()
+{
+	char arr[] = "abcdef";
+	reverse_string(arr);
+	printf("%s\n", arr);
+	return 0;
+}
