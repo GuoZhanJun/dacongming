@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//调试技巧（用debug版本的调试会产生debug版本的可执行程序）release同样
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+	int i = 0;
+	for (i = 0; i < 100; i++)
+	{
+		printf("%d ", i);
+	}
+	system("pause");//为了让文件夹（debug/release）里的exe文件能运行显示出来
+		return 0;
+}
+//  Debug版本与Release版本的区别----选择哪个版本运行就产生相应的文件夹（Debug/Release
+//Debug占用空间大（原因:称为调试版本，文件中包含了调试信息，并不做任何优化，便于程序员调试程序） 
+//Release占用空间小（称为发布版本，它往往是进行了各种优化，使得程序在代码大小和运行速度上都是
+//最优的，以使用户很好的使用）
+
+//release 对代码会进行优化（部分代码在debug里会是死循环）不会出现死循环
