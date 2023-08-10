@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+//int main()
+//{
+//	int i = 0;
+//	int sum = 0;
+//	int n = 0;
+//	int ret = 1;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		int j = 0;
+//		int ret = 1;
+//		for (j = 1; j <= i; j++)
+//		{
+//			ret *= j;
+//		}
+//		sum += ret;
+//	}
+//	printf("%d\n", sum);
+//	return 0;
+//}
+int main()
+{
+	int i = 0;
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	for (i = 0; i <= 12; i++)
+	{
+		printf("hehe\n");//死循环打印hehe
+		//原因：1：栈区的默认使用；先使用高地址处的空间，再使用低地址的空间
+		//2：数组随着下标的增长，地址是由低到高变化
+		//（i增长超过10越界访问到12正好与arr[12]的地址相同，i和arr[12]都变成0，进入死循环）
+		arr[i] = 0;
+	}
+	system("pause");
+	return 0;
+
+}
