@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void my_strcpy(char* dest,char* src)//目的地，源头
+{
+	while (*src!='\0')
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = *src;//此时*src里的第一个元素都是\0;
+}
+int main()
+{
+	//strcpy--字符串拷贝
+	char arr1[] = "###################";
+	char arr2[] = "bit";
+	my_strcpy(arr1,arr2);//把arr2里的内容拷贝到arr1里（由于遇到bit后的\0,后面的#就不打印了）
+	printf("%s\n", arr1);
+	return 0;
+}
