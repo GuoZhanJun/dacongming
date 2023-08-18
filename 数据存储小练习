@@ -1,0 +1,36 @@
+//练习1
+//#include<Windows.h>
+//int main()
+//{
+//	unsigned int i = 0;
+//	for (i = 9; i >= 0; i--)//因为是unsigned所以i到0时减1永远不会为复数，一直死循环下去
+//		printf("%u\n", i);
+//	Sleep(500);
+//	return 0;
+//}
+
+//练习2
+//int main()
+//{
+//	char a[1000];//因为char的内存从-128到127，当遇到0的
+//	//时候截至，即算的长度为-128到127之间的数的个数
+//	int i;
+//	for (i = 0; i < 1000; i++)
+//	{
+//		a[i] = -1 - i;
+//	}
+//	printf("%d", strlen(a));//--255(strlen遇到0就终止)
+//	return 0;
+//}
+
+
+//练习3
+//int main()
+//{
+//	unsigned char i = 0;//0-255 255+1=0(条件永远成立，死循环打印）
+//	for (i = 0; i <= 255; i++)//unsigned容易出现死循环
+//	{
+//		printf("hello world\n");
+//	}
+//	return 0;
+//}
