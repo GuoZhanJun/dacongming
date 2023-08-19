@@ -1,0 +1,86 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+//int main()
+//{
+//	int n = 9;
+//	float* pFloat = (float*)&n;
+//	printf("n的值为：%d\n", n);
+//	printf("*pFloat的值为：%f\n", *pFloat);
+//	*pFloat = 9.0;
+//	printf("num的值为：%d\n", n);
+//	printf("*pFloat的值为：%f\n", *pFloat);
+//	return 0;
+//}
+//浮点数存储
+//eg：
+//int main()
+//{
+//	float f = 5.5;
+//	//5.5
+//	//101.1
+//	//(-1)^0*1.011*2^2
+//	//S=0;
+//	//M=1.011
+//	//E=2
+//	//010 0000 1011 0000 0000 0000 0000
+//	//0x40b00000
+//	return 0;
+//}
+
+
+
+//字符指针
+//eg
+//int main()
+//{
+//	char ch = '2';
+//	char* pc = &ch;
+//	return 0;
+//}
+//#include <string.h>
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	int sz = sizeof arr / sizeof arr[0];
+//	int len = strlen(arr);
+//	printf("%d\n",sz);//7
+//	printf("%d\n",len);//6
+//	return 0;
+//}
+//
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	char* pc = arr;
+//	printf("%s\n", arr);
+//	printf("%s\n", pc);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	const char* p = "abcdef";//"abcdef"是一个常量字符串
+//	*p = 'w';//无法改变会报错，因为"bacdef"是个常量字符串无法被改变
+//	printf("%c\n", *p);//打印首个元素--a
+//	printf("%s\n", p);//打印整个字符串元素
+//	return 0;
+//}
+
+//面试题
+int main()
+{
+	char arr1[] = "abcdef";
+	char arr2[] = "abcdef";
+	/*char* p1 = "abcdef";
+	char* p2 = "abcdef";*/
+	if (arr1 == arr2)
+	{
+		printf("hehe\n");
+	}
+	else
+	{
+		printf("haha\n");
+	}
+	return 0;
+}
