@@ -1,0 +1,29 @@
+strcat--字符串追加
+#include<string.h>
+#include<assert.h>
+#include<stdio.h>
+char* my_strcat(char* dest, const char* src)
+{
+	char* ret = dest;
+	assert(dest != NULL);
+	assert(src != NULL);
+	//1.找到目的字符串的'\0'
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	//追加
+	while (*dest++=*src++)
+	{
+		;
+	}
+	return ret;
+}
+int main()
+{
+	char arr1[20] = "hello";//目的地必须足够大
+	char arr2[] = "world";//arr2里必须有'\0'
+	my_strcat(arr1,arr2);
+	printf("%s\n", arr1);
+	return 0;
+}
