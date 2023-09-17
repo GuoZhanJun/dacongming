@@ -1,0 +1,22 @@
+strcpy--字符串拷贝
+char*my_strlen(char* dest, const char* src)
+{
+	assert(dest != NULL);
+	assert(dest != NULL);
+	char* ret = dest;
+	//拷贝src指向的字符串到dest指向的空间，包含'\0'
+	while (*dest++ = *src++)//连\0可以同时拷贝过去，因为拷贝过去后表达式内为0，语句结束
+	{
+		;
+	}
+	//返回目的空间的起始地址
+	return ret;
+}
+int main()
+{
+	char arr1[] = "abcdefghi";
+	char arr2[] = "bit";
+	my_strcpy(arr1, arr2);
+	printf("%s\n", arr1);
+	return 0;
+}
