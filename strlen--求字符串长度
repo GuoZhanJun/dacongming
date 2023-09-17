@@ -1,0 +1,33 @@
+1.strlen
+
+计数器的方法
+递归
+指针-指针
+#include<assert.h>
+int my_strlen(const char* str)//const修饰*str保证"abcdef"不会被修改
+{
+	int count = 0;
+	assert(str != NULL);//因为传的是指针
+	while (*str!='\0')//或者while(*str)
+	{
+		count++;
+		str++;
+	}
+	return count;
+}
+int main()
+{
+	int len = my_strlen("abcdef");//6
+	//char arr[] = { 'a','b','c','d','e','f' };//\0为止，值为随机
+	//int len = my_strlen(arr);
+	printf("%d\n", len);
+	if (strlen("abc")-strlen("abcdef")>0)
+	{
+		printf("hehe\n");
+	}
+	else
+	{
+		printf("haha\n");
+	}
+	return 0;
+}
