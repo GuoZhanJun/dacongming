@@ -1,0 +1,54 @@
+//strcmp--字符串比较
+int main()
+{
+	char* p1 = "abcdef";
+	char* p2 = "sqwer";
+	int ret = strcmp(p1, p2);
+	if (strcmp(p1 , p2)>0)
+	{
+		printf("p1>p2\n");
+	}
+	else if (strcmp(p1 , p2)==0)
+	{
+		printf("p1==p2\n");
+	}
+	else if(strcmp(p1, p2) <0)
+	{
+		printf("p1<p2\n");
+	}
+	//printf("%d\n", ret);//若p1>p2--ret为正数   p1<p2 为负数 相等为0
+	return 0;
+}
+
+
+
+
+
+
+//实现strcmp函数
+#include<stdio.h>
+#include<assert.h>
+#include<string.h>
+char* my_strcmp(const char* str1, const char* str2)
+{
+	assert(str1);//指针为了保证有效性，必须断言
+	assert(str2);
+	//比较
+	while (*str1++==*str2++)
+	{
+		if (*str1 == '\0')
+			return 0;//相等
+		;
+	}
+	if (*str1 > *str2)
+		return 1;//大于
+	else 
+		return -1;//小于
+}
+int main()
+{
+	char* p1 = "abcdef";
+	char* p2 = "abqwe";
+	int ret=my_strcmp(p1, p2);
+	printf("%d\n", ret);
+}
