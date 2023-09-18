@@ -1,0 +1,21 @@
+strcmp-字符串大小比较
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	const char* p1 = "abcdef";
+	const char* p2 = "abcqwer";
+	int ret=strcmp(p1, p2);
+	printf("%s\n", ret);
+	return 0;
+}
+
+strncmp--比较指定大小的字符串大小
+int main()
+{
+	const char* p1 = "abcdef";
+	const char* p2 = "abcqwer";
+	int ret=strncmp(p1, p2,3);//相当于比较前三个的大小
+	printf("%s\n", ret);
+	return 0;
+}
