@@ -1,0 +1,8 @@
+strncat--字符串追加
+int main()
+{
+	char arr1[30] = "hello";
+	char arr2[] = "world";
+	strncat(arr1, arr2, 3);//若个数比本身字符串长，则后面补到字符串最后一个'\0'时便结束
+	printf("%s\n", arr1);//后面会把'\0'放进去
+}
