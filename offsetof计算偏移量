@@ -1,0 +1,17 @@
+#include<stddef.h>
+struct S
+{
+    char c;
+    int i;
+    double d;
+};
+int main()
+//offsetof-计算结构体成员在结构体内的偏移量
+{
+    printf("%d\n", offsetof(struct S, c));
+    printf("%d\n", offsetof(struct S, i));
+    printf("%d\n", offsetof(struct S, d));
+    return 0;
+}
+       
+         
