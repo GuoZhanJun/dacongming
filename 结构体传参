@@ -1,0 +1,29 @@
+#include<string.h>
+struct S
+{
+    char a;
+    char c;
+    double d;
+};
+void Init(struct S* ps)//用指针接收
+{
+    ps->a = 100;
+    ps->c = 'w';
+    ps->d = 3.14;
+}
+void Print1(struct S tmp)
+{
+    printf("%d %c %lf\n", tmp.a, tmp.c, tmp.d);
+}
+void Print2(const struct S* ps)
+{
+    printf("%d %c %lf\n", ps->a, ps->c, ps->d);
+}
+int main()
+{
+    struct S s= { 0 };
+    Init(&s);//必须传地址
+    Print1(s);//传值  两者都可以
+    Print2(&s);//传址   结构体传参用Print2更好（好处在于不管结构体多大，只传过去四个字节大小，不会出现参数压栈导致性能降低）
+    return 0;
+}
