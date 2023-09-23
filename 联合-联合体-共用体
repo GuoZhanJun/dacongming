@@ -1,0 +1,16 @@
+union un
+{
+	char c;//动i  c也跟着改  只能用一个
+	int i;
+};
+int main()
+{
+	union un u;
+	printf("%d\n", sizeof(u));
+
+	//三者的地址全都一样
+	printf("%p\n",&(u));
+	printf("%p\n", &(u.c));
+	printf("%p\n", &(u.c));
+	return 0;
+}
