@@ -1,0 +1,76 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdlib.h>
+#include<string.h>
+#include<errno.h>
+#include<stdio.h>
+//动态内存管理
+//malloc
+//free
+//calloc
+//realloc
+
+
+//calloc在内存中开辟一块空间，并且把开辟的空间初始化为0
+//int main()
+//{
+//	//malloc(10*sizeof(int));
+//	int*p=(int*)calloc(10, sizeof(int));
+//	if (p == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//	}
+//	else
+//	{
+//		for (int i = 0; i < 10; i++)
+//		{
+//			printf("%d", *(p + i));
+//		}
+//	}
+//	free(p);//free函数是用来释放动态开辟空间的
+//	p = NULL;
+//	return 0;
+//}
+
+
+//realloc--调整动态开辟空间的大小
+//使用注意事项，
+//1.如果p指向的空间有足够的空间可以直接追加，则直接追加，后返回p
+//2.如果p指向的空间没有足够的空间可以追加，则realloc函数会重新找一个新的内存区域开辟
+//一块满足需求的空间，并且把原来内存中的数据拷贝回来，释放旧的内存空间，最好返回新开辟的内存空间地址
+//3.得用一个新的变量来接受realloc函数的返回值
+int main()
+{
+	int* p = (int*)malloc(20);
+	if (p == NULL)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	else
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			*(p+ i)=i;
+		}
+	}
+	//就是在使用malloc开辟的20个字节空间
+	//假设这里 20个字节不能满足我们的使用
+	//希望我们能够有40个字节的空间
+	//这里就可以使用realloc来调整动态开辟的内存
+	int* ptr = realloc(p, 40);
+	if (ptr != NULL)
+	{
+			p = ptr;
+			int i = 0;
+			for (i = 0; i < 10; i++)
+			{
+				*(p + i) = i;
+			}
+			for (i = 0; i < 10; i++)
+			{
+				printf("%d ", *(p + i));
+			}
+	}
+	free(p);
+	p = NULL;
+	return 0;
+}
