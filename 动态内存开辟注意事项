@@ -1,0 +1,49 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdlib.h>
+#include<stdio.h>
+#include<Windows.h>
+
+
+
+int main()
+{
+	//int* p = (int*)malloc(40);
+	//if (p == NULL)
+	//{
+	//	return 0;
+	//}
+	//for (int i = 0; i < 10; i++)
+	//{
+	//	*(p + i) = i;
+	//}
+	////回收空间--err
+	////使用free释放动态开辟内存的一部分
+	//free(p);
+	//p = NULL;
+
+
+
+	//对同一块动态内存多次释放
+	//int* p = (int*)malloc(40);
+	//if (p = NULL)
+	//{
+	//	return 0;
+	//}
+	////使用
+	////释放
+	//free(p);
+	//p = NULL;//可以防止多次free错误
+	////....
+	//free(p);
+
+
+
+
+	//对动态开辟内存忘记释放(内存泄露）
+	while (1)
+	{
+		malloc(1);
+		Sleep(1000);
+	}
+	return 0;
+}
