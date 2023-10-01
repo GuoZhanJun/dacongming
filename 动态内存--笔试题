@@ -1,0 +1,62 @@
+//动态开辟内存面试题
+void GetMemory(char* p)
+{
+	p = (char*)malloc(100);
+}
+void Test(void)
+{
+	char* str = NULL;
+	GetMemory(str);
+	strcpy(str, "hello world");//程序崩溃
+	printf(str);
+}
+//1.程序出现崩溃
+//2.程序存在内存泄露的问题（str以值传递的形式给p，p是GetMemory函数的形参，只能在函数内部有效，等GetMemory函数返回后，
+//动态开辟的内存尚未释放，并且无法找到，所以会造成内存泄露)
+int main()
+{
+	Test();
+	return 0;
+}
+
+//正确方式1
+void GetMemory(char **p)
+{
+	*p = (char*)malloc(100);
+}
+void Test(void)
+{
+	char* str = NULL;
+	GetMemory(&str);
+	strcpy(str, "hello world");
+	printf(str);
+	free(str);
+	str = NULL;
+}
+int main()
+{
+	Test();
+	return 0;
+}
+
+
+//正确方式2
+char* GetMemory(char* p)
+{
+	p = (char*)malloc(100);
+	return p;
+}
+void Test(void)
+{
+	char *str = NULL;
+	str = GetMemory(str);
+	strcpy(str, "hello world");
+	printf(str);
+	free(str);
+	str = NULL;
+}
+int main()
+{
+	Test();
+	return 0;
+}
