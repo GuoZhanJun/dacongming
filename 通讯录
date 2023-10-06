@@ -1,4 +1,3 @@
-contact.h
 #define _CRT_SECURE_NO_WARNINGS 1
 #define MAX 1000
 #define MAX_NAME 30
@@ -26,18 +25,18 @@ struct PeoInfo
 	char addr[MAX_ADDR];
 };
 //通讯录类型
-struct ConTact
+struct Contact
 {
 	struct PeoInfo data[MAX];//存放1000个信息
 	int size;//记录当前已经有的元素个数
 };
 //声明函数
-void InitContact(struct ConTact* ps);
-void AddContact(struct ConTact* ps);
-void ShowContact(const struct ConTact* ps);
-void DelContact(struct ConTact* ps);//删除指定的联系人
-void SearchContact(const struct ConTact* ps);//查找指定联系人
-void ModifyContact(struct ConTact* ps);//修改指定联系人
+void InitContact(struct Contact* ps);
+void AddContact(struct Contact* ps);
+void ShowContact(const struct Contact* ps);
+void DelContact(struct Contact* ps);//删除指定的联系人
+void SearchContact(const struct Contact* ps);//查找指定联系人
+void ModifyContact(struct Contact* ps);//修改指定联系人
 
 
 
@@ -51,15 +50,14 @@ void ModifyContact(struct ConTact* ps);//修改指定联系人
 
 
 
-contact.c
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"contact.h"
-void InitContact(struct ConTact* ps)
+void InitContact(struct Contact* ps)
 {
 	memset(ps->data, 0, sizeof(ps->data));
 	ps->size = 0;//设置通讯录最初只有0个元素
 }
-void AddContact(struct ConTact* ps)
+void AddContact(struct Contact* ps)
 {
 	if (ps->size == MAX)
 	{
@@ -81,7 +79,7 @@ void AddContact(struct ConTact* ps)
 		printf("添加成功\n");
 	}
 }
-void ShowContact(const struct ConTact* ps)
+void ShowContact(const struct Contact* ps)
 {
 	if (ps->size == 0)
 	{
@@ -102,7 +100,7 @@ void ShowContact(const struct ConTact* ps)
 		}
 	}
 }
-static int FindByName(const struct Contact* ps,char name[MAX_NAME])
+static int FindByName(const struct Contact *ps,char name[MAX_NAME])
 {
 	int i = 0;
 	for (i = 0; i < ps->size; i++)
@@ -114,7 +112,7 @@ static int FindByName(const struct Contact* ps,char name[MAX_NAME])
 	}
 		return -1;//找不到情况
 }
-void DelContact(const struct ConTact* ps)
+void DelContact( struct Contact* ps)
 {
 	char name[MAX_NAME];
 	printf("请输入要删除人的名字:>");
@@ -139,7 +137,7 @@ void DelContact(const struct ConTact* ps)
 	
 }
 
-void SearchContact(struct ConTact* ps)
+void SearchContact(const struct Contact* ps)
 {
 	char name[MAX_NAME];
 	printf("请输入要查找人的名字：>");
@@ -161,7 +159,7 @@ void SearchContact(struct ConTact* ps)
 	}
 }
 
-void ModifyContact(struct ConTact* ps)
+void ModifyContact(struct Contact* ps)
 {
 	char name[MAX_NAME];
 	printf("请输入要修改人的名字：>");
@@ -199,7 +197,7 @@ void ModifyContact(struct ConTact* ps)
 
 
 
-test.c
+
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "contact.h"
 void menu()
@@ -215,7 +213,7 @@ int main()
 {
 	int input = 0;
 	//创建通讯录
-	struct ConTact con;//con 就是通讯录，里边包含1000的元素数组和size
+	struct Contact con;//con 就是通讯录，里边包含1000的元素数组和size
 	//初始化通讯录
 	InitContact(&con);
 	//
