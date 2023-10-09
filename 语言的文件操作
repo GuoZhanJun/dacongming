@@ -1,0 +1,79 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//C语言的文件操作
+#include<string.h>
+#include<stdio.h>
+//int main()
+//{
+//	//文件指针
+//	//打开路径
+//	//..表示上一级路径
+//	//. 表示当前路径
+//	//fopen("..\\test.txt","r");
+//	//fopen("test.txt","r");
+//
+//
+//	//绝对路径的写法
+//	//fopen("C:*****尽可能详细..test_6_6\\test_5_6\\test.txt", "r");
+//	FILE* pf=fopen("test.txt", "w");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n",strerror(errno));//查看打开失败的原因
+//		return 0;
+//	}
+//	//打开成功
+//	//读文件
+//	//关闭文件
+//     fclose(pf);
+//	 pf = NULL;
+//	return 0;
+//}
+
+
+//文件的顺序读
+//int main()
+//{
+//	FILE *pfWrite=fopen("test.txt", "w");
+//	if (pfWrite == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//写文件
+//	fputc('g', pfWrite);
+//	fputc('u', pfWrite);
+//	fputc('o', pfWrite);
+//	//关闭文件
+//	fclose(pfWrite);
+//	pfWrite = NULL;
+//	return 0;
+//}
+
+
+//文件的顺序写
+//int main()
+//{
+//	FILE* pfRead = fopen("test.txt", "r");
+//	if (pfRead == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//读文件
+//	printf("%c", fgetc(pfRead));
+//	printf("%c", fgetc(pfRead));
+//	printf("%c", fgetc(pfRead));
+//	//关闭文件
+//	fclose(pfRead);
+//	pfRead = NULL;
+//	return 0;
+//}
+
+
+//fgetc可以直接从输入流里读取，然后在标准输出流中输出（键盘输入，屏幕输出）
+int main()
+{
+	int ch = fgetc(stdin);
+	fputc(ch, stdout);
+	//fputc(ch, stdout);
+	return 0;
+}
