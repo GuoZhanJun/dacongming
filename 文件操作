@@ -1,0 +1,198 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#include<errno.h>
+//int main()
+//{
+//	FILE* pf=fopen("test.txt","w");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//写文件
+//	fputc('g', pf);
+//	fputc('z', pf);
+//	fputc('j', pf);
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+//读文件
+//int main()
+//{
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//读文件
+//	int ch=fgetc(pf);
+//	printf("%c", ch);
+//	ch = fgetc(pf);
+//	printf("%c", ch);
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+//fgets---读取一行
+//int main()
+//{
+//	char buf[1024] = { 0 };
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//		return 0;
+//	}
+//	//读文件
+//    fgets(buf,1024,pf);
+//	puts(buf);//打印完会自动换行
+//	//printf("%s", buf);
+//	fgets(buf, 1024, pf);
+//	puts(buf);
+//	//printf("%s", buf);
+//	//关闭文件
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+
+//写一行
+//int main()
+//{
+//	char buf[1024] = { 0 };
+//	FILE* pf = ("test.txt", "w");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	//写文件
+//	fputs("hello\n", pf);
+//	fputs("world\n", pf);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+
+//读取一行--输出一行
+//int main()
+//{
+//	char buf[1024] = { 0 };
+//	//从键盘上读取一行文本信息
+//	//fgets(buf,1024,stdin);//stdin从标准输入流读取
+//	//fputs(buf,stdout);//输出到标准输出流
+//
+//	gets(buf);//直接输入输出
+//	puts(buf);
+//	return 0;
+//}
+
+
+
+
+//struct S
+//{
+//	int n;
+//	float score;
+//	char arr[10];
+//};
+//int main()
+//{
+//	struct S s = { 100,3.14f,"gzj" };
+//	FILE* pf = fopen("test.txt", "w");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	//格式化的形式写文件
+//	fprintf(pf,"%d %f %s",s.n,s.score,s.arr);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+
+//fscanf
+//struct S
+//{
+//	int n;
+//	float score;
+//	char arr[10];
+//};
+//int main()
+//{
+//	struct S s = {0};
+//	FILE* pf = fopen("test.txt", "r");
+//	if (pf == NULL)
+//	{
+//		return 0;
+//	}
+//	//格式化的输入数据
+//	fscanf(pf,"%d %f %s", &(s.n), &(s.score), (s.arr));
+//	printf("%d %f %s", s.n, s.score, s.arr);
+//	fclose(pf);
+//	pf = NULL;
+//	return 0;
+//}
+
+
+
+
+
+
+//fscanf和fprintf函数
+//struct S
+//{
+//	int n;
+//	float score;
+//	char arr[10];
+//};
+//int main()
+//{
+//	struct S s = {0};
+//
+//
+//	fscanf(stdin,"%d %f %s", &(s.n), &(s.score), (s.arr));
+//	fprintf(stdout, "%d %f %s", s.n, s.score, s.arr);
+//
+//	return 0;
+//}
+
+
+
+//sscanf和sprintf函数
+//sscanf是从字符串中读取格式化的数据
+//sprintf是把格式化数据输出成（存储到）字符串
+struct S
+{
+	int n;
+	float score;
+	char arr[10];
+};
+int main()
+{
+	struct S s = { 100,3.14f,"abcdef" };
+	struct S tmp = { 0 };
+	char buf[1024] = { 0 };
+	//把格式化的数据转换成字符存储到buf
+	sprintf(buf, "%d %f %s", s.n, s.score, s.arr);
+	//从buf中读取格式化的数据到tmp中
+	sscanf(buf, "%d %f %s", &(tmp.n), &(tmp.score), tmp.arr);
+	printf("%d %f %s\n", tmp.n,tmp.score,tmp.arr);
+	return 0;
+}
+
+
+
