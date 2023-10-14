@@ -1,12 +1,30 @@
+#include<stdlib.h>
+#include<stdio.h>
+//feof--不是判断是不是结束，而是显示读取错误的原因
+//eg:
+//1.perror--错误信息提示(最简单）
 int main()
 {
-	FILE* pf = fopen("test2.txt", "r");//不存在的文件
+	FILE* pf = fopen("test.txt", "r");//不存在的文件
 	if (pf == NULL)
 	{
 		perror("");
 		return 0;
 	}
 	//读文件
+	int ch = 0;
+	while ((ch = fgetc(pf)) != EOF)
+	{
+		putchar(ch);
+	}
+	if (ferror(pf))
+	{
+		printf("error\n");
+	}
+	else if(feof(pf))
+	{
+		printf("    end of file\n");
+	}
 	//关闭文件
 	fclose(pf);
 	pf == NULL;
