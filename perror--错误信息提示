@@ -1,0 +1,14 @@
+int main()
+{
+	FILE* pf = fopen("test2.txt", "r");//不存在的文件
+	if (pf == NULL)
+	{
+		perror("");
+		return 0;
+	}
+	//读文件
+	//关闭文件
+	fclose(pf);
+	pf == NULL;
+		return 0;
+}
