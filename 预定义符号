@@ -1,0 +1,30 @@
+//预定义符号
+//eg:
+//#define MAX 100
+//int main()
+//{
+//
+//	//printf("%d\n", __LINE__);//得到相应代码的行数
+//	//printf("%s\n", __FILE__);//__FILE__表示的是此时test.c的绝对路径
+//	//printf("%s\n", __DATE__);//获取月日
+//	//printf("%s\n", __TIME__);//获取时间
+//	// //printf("%s\n", __FUNCTION__);//获取所在主函数名称
+//	//写日志文件
+//	int i = 0;
+//	int arr[10] = { 0 };
+//	FILE* pf = fopen("log.txt", "w");
+//	for (i = 0; i < 10; i++)
+//	{
+//		arr[i] = i;
+//		fprintf(pf, "file:%s line:%d date:%s time:%s i=%d\n",
+//			__FILE__, __LINE__, __DATE__, __TIME__, i);
+//		//记录每行代码的相应信息
+//	}
+//	fclose(pf);
+//	pf = NULL;
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
