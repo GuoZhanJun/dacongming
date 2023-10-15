@@ -1,0 +1,15 @@
+
+//预处理指令--(#开头的都叫预处理指令）
+//eg:
+//#define #include(#开头的都叫预处理指令） #pragma #if #endif #ifdef #line
+//#define可以定义标识符   可以定义宏
+
+//定义标识符  eg:
+#define MAX 100
+#define STR "hehe"
+int main()
+{
+	int max = MAX;
+	printf("%s\n", STR);
+	return 0;
+}
