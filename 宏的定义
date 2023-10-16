@@ -1,0 +1,62 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//define--宏的定义--适当使用括号防止优先级的顺序错误
+//#define SQUARE(X) (X)*(X)//防止计算优先级不同出现错误
+//int main()
+//{
+//	int ret = SQUARE(5-1);
+//	printf("ret= %d", ret);
+//	return 0;
+//}
+// 
+// 
+//eg:
+//#define DOUBLE(X) ((X)+(X))
+//int main()
+//{
+//	int ret = 10 * DOUBLE(5);
+//	printf("ret= %d", ret);
+//	return 0;
+//}
+
+
+//#(宏定义）
+//eg:
+//#define PRINT(X) printf("the value of " #X " is %d\n",X)
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	PRINT(a);
+//	PRINT(b);
+//	return 0;
+//}
+
+
+//##
+//#define CAT(X,Y) X##Y
+//int main()
+//{
+//	int Class66 = 2023;
+//	printf("%d\n", CAT(Class, 66));
+//	return 0;
+//}
+
+
+
+//分别用宏或者函数方式求出两个数的较大值
+#define MAX(X,Y) (X)>(Y)?(X):(Y)//宏的方式
+int Max(int x, int y)//函数的方式
+{
+	return (x > y ? x : y);
+}
+int main()
+	{
+	int a = 5;
+	int b = 10;
+	int max = Max(a, b);..............
+	printf("max = %d\n", max);
+	max = MAX(a, b);
+	printf("max = %d\n", max);
+	return 0;
+	}
