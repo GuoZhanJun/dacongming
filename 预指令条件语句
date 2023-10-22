@@ -1,0 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//预指令条件语句
+#include <stdio.h>
+int main()
+{
+#if 1==2
+	printf("haha\n");
+#elif 2==1
+	printf("hehe\n");
+#else 
+	printf("66\n");
+#endif //结束
+	return 0;
+}
+
+
